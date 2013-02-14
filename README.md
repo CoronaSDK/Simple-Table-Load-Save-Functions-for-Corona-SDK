@@ -23,3 +23,5 @@ For example:
 If you'd like to change the default directory, then you can change the variable in the code
 (`DefaultLocation = system.TemporaryDirectory`) or call `loadsave.changeDefault(system.TemporaryDirectory)` within your code.
 
+To remove a file :
+loadsave.removeFile("myTable.json")

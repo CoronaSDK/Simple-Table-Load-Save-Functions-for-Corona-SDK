@@ -57,4 +57,20 @@ function _.changeDefault(location)
 	return true
 end
 
+function _.removeFile(filename, location)
+    if location and (not ValidLocations[location]) then
+        error("Attempted to remove settingsfile from an invalid location", 2)
+    elseif not location then
+        location = DefaultLocation
+    end
+    local path = system.pathForFile( filename, location)
+    local results, reason = os.remove( path )
+    if results then
+        print( "file removed" )
+    else
+        print( "file does not exist", reason )
+    end
+    return nil
+end
+
 return _
